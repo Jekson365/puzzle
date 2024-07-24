@@ -1,5 +1,5 @@
 module Employees
-  class EmployeeHistory < ApplicationRecord
+  class EmployeesHistory < ApplicationRecord
 
   end
 end

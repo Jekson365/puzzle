@@ -1,0 +1,155 @@
+@import './config.scss';
+
+@font-face {
+    font-family: 'Mtavruli';
+    src: url(Archetype_Mtavruli.ttf);
+}
+
+* {
+    font-family: $font-mtavruli !important;
+    text-decoration: none !important;
+    margin: 0;
+    padding: 0;
+}
+.custom-input-field {
+    border-radius: 5px;
+    border: 0;
+    min-width: 300px;
+    outline: 0;
+    background-color: $main-white;
+    font-size: 15px;
+    padding: 10px 10px;
+    font-family: $font-mtavruli;
+}
+.line {
+    width: 100%;
+    height: 1px;
+    margin-top: 5px;
+    background-color: white;
+}
+.cover-check {
+    height: 850px;
+    .check-inner-container {
+        overflow-y: scroll;
+        height: 80%;
+    }
+}
+select {
+    background-color: $main-white;
+    border: 0;
+    outline: 0;
+    min-width: 100px;
+    option {
+        height: 50px;
+    }
+}
+.loading-cover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    .dark-overlay {
+        background-color: rgba(0,0,0,0.4);
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        height: 100%;
+    }
+}
+.main-button {
+    color: white;
+    outline: 0;
+    padding: 10px 0;
+    border-radius: 30xp;
+    border: 0;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 120px;
+    font-size: 15px;
+    transition: 0.3s;
+    &:hover {
+        width: 130px;
+    }
+}
+.main-button-red {
+    background-color: $main-green;
+}
+.main-button-green {
+    color: $main-white;
+    background-color: $main-red;
+}
+
+body {
+    height: 1080px !important;
+    background-color: white;
+    overflow-y: hidden;
+}
+.create-order-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -10000;
+    background-color: #1e2031 !important;
+}
+
+/* Target the scrollbar */
+::-webkit-scrollbar {
+    width: 3px;
+    /* Width of the scrollbar */
+}
+
+/* Track of the scrollbar */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Background of the scrollbar track */
+}
+
+/* Thumb of the scrollbar */
+::-webkit-scrollbar-thumb {
+    background: red;
+    /* Color of the scrollbar thumb */
+    border-radius: 10px;
+    /* Round corners of the scrollbar thumb */
+}
+
+/* Hover effect for the thumb */
+::-webkit-scrollbar-thumb:hover {
+    background: darkred;
+    /* Darker red on hover */
+}
+.check-button-green {
+    background-color: $main-red;
+}
+.language-button {
+    padding: 10px;
+    background-color: $main-green;
+    color: white;
+    border: 0;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: 0;
+}
+.check-button {
+    font-size: 20px;
+    color: white;
+    outline: 0;
+    padding: 10px 30px;
+    border-radius: 30xp;
+    border: 0;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 120px;
+    transition: 0.3s;
+    &:hover {
+        width: 130px;
+    }
+}

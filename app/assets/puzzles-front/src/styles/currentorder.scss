@@ -1,0 +1,100 @@
+@import './config.scss';
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+
+.id-container {
+    min-width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: $main-green;
+    background-color: $main-white;
+    font-family: "Mukta", sans-serif !important;
+    font-weight: 800;
+}
+.second {
+    background-color: $main-red;
+    color: white;
+}
+.f-s {
+    font-size: 16px !important;
+}
+
+.order-number-list-item {
+    width: 150px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $main-white;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+
+    h1 {
+        letter-spacing: 2px;
+        font-weight: bold;
+        font-family: "Mukta", sans-serif !important;
+
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.ready {
+    h1 {
+        font-weight: 800;
+        color: $main-red !important; 
+    }
+}
+.not-ready {
+    background-color: $main-green;
+    color: white;
+}
+
+.amount-icon {
+    width: 50px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    border-radius: 20px;
+    color: white;
+    position: relative;
+    cursor: pointer;
+
+    .toast {
+        opacity: 0;
+        position: absolute;
+        top: -35px;
+        border-radius: 20px;
+        left: -10px;
+        border: 2px solid $main-red;
+        color: black;
+        background-color: $main-white;
+        min-width: 80px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+
+    }
+
+    &:hover .toast {
+        opacity: 1;
+    }
+}
+
+.less {
+    background-color: $main-green;
+}
+
+.more {
+    background-color: $main-red;
+}

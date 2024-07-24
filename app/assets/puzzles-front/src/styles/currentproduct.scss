@@ -1,0 +1,27 @@
+@import './config.scss';
+
+.ing-list {
+    background-color: white;
+    border-radius: 40px;
+    box-shadow: 0 0 10px 0.1px rgba(0,0,0,0.1);
+    width: 300px;
+    border-radius: 30px;
+    padding: 5px 20px;
+}
+
+.remove-icon {
+    background-color: white;
+    color: red;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 50%;
+    &:hover {
+        background-color: red;
+        color: white;
+    }
+}

@@ -1,0 +1,114 @@
+@import './config.scss';
+
+
+.admin-container {
+    height: 680px;
+    overflow-y: scroll;
+    padding-left: 10px;
+
+    .input-field {
+        padding: 10px;
+        width: 200px;
+        font-family: $font-mtavruli !important;
+        font-size: 15px;
+        outline: 0;
+        border-radius: 5px;
+        border: 0;
+        background-color: $main-white;
+
+        &:focus {
+            outline: 2px solid $main-green;
+        }
+    }
+    .ingredient-amount-input {
+        max-width: 20px;
+        padding: 5px;
+        border-radius: 5px;
+        border: 2px solid $main-white;
+        outline: 0;
+    }
+
+    .add-icon {
+        background-color: greenyellow;
+        color: white;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mtavruli {
+        font-family: $font-mtavruli;
+    }
+    .each-ing {
+        background-color: white;
+        padding: 10px 30px;
+        padding-left: 10px;
+        border-radius: 30px;
+            display: flex;
+            align-items: flex-start;
+        box-shadow: 0 0 10px 0.1px rgba(0,0,0,0.1);
+        .delete-button {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;   
+            background-color: $main-green;
+            &:hover {
+                color: $main-green;
+                background-color: white;
+            }
+        }
+    }
+    
+    .parent-item {  
+        box-shadow: 0 0 10px 1px rgba(0,0,0,0.1);
+        padding: 10px 20px;
+        .delete-button {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;   
+            background-color: $main-green;
+            &:hover {
+                color: $main-green;
+                background-color: white;
+            }
+        }
+    }
+
+    .input-button {
+        background-color: $main-primary !important;
+        font-family: $font-mtavruli !important;
+    }
+
+    .create-button {
+        height: 30px;
+        font-family: $font-mtavruli !important;
+        padding: 0 20px !important;
+        color: white !important;
+        background-color: $main-green !important;
+    }
+
+    .is-added {
+        border-radius: 5px;
+        width: 35px;
+        height: 35px;
+        background-color: rgb(88, 209, 88);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

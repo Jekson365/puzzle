@@ -1,5 +1,5 @@
-module Employee
+module Employees
   class Position < ApplicationRecord
-    belongs_to :employee, :class_name => 'Employee::Employee'
+    has_many :employees, :class_name => 'Employees::Employee'
   end
 end

@@ -1,9 +1,11 @@
-class ReportService
-  def initialize(params)
-    @params = params
-  end
-  def report
-    query = "
+module Reports
+  class ReportService
+    def initialize(params)
+      @params = params
+    end
+
+    def report
+      query = "
           SELECT
               orders.current_order_id,
               ordered_products.id,
@@ -28,23 +30,25 @@ class ReportService
                        sell_types.name
               ORDER BY orders.current_order_id
       "
-    ActiveRecord::Base.connection.execute(query)
-  end
-  def filter_string
-    conditions = []
-    start_date = @params['start_date'].present? ? Date.parse(@params['start_date']).beginning_of_day : nil
-    end_date = @params['end_date'].present? ? Date.parse(@params['end_date']).end_of_day : Date.today.end_of_day
-    name = @params['name'].present? ? "%#{@params['name']}%" : nil
-
-    if start_date && end_date
-      conditions << "ordered_products.created_at BETWEEN '#{start_date}' AND '#{end_date}'"
-    elsif start_date
-      conditions << "ordered_products.created_at BETWEEN '#{start_date}' AND '#{end_date}'"
+      ActiveRecord::Base.connection.execute(query)
     end
 
-    conditions << "products.name LIKE '#{name}'" if name
+    def filter_string
+      conditions = []
+      start_date = @params['start_date'].present? ? Date.parse(@params['start_date']).beginning_of_day : nil
+      end_date = @params['end_date'].present? ? Date.parse(@params['end_date']).end_of_day : Date.today.end_of_day
+      name = @params['name'].present? ? "%#{@params['name']}%" : nil
 
-    conditions.any? ? "WHERE #{conditions.join(' AND ')}" : ''
+      if start_date && end_date
+        conditions << "ordered_products.created_at BETWEEN '#{start_date}' AND '#{end_date}'"
+      elsif start_date
+        conditions << "ordered_products.created_at BETWEEN '#{start_date}' AND '#{end_date}'"
+      end
+
+      conditions << "products.name LIKE '#{name}'" if name
+
+      conditions.any? ? "WHERE #{conditions.join(' AND ')}" : ''
+    end
+
   end
-
 end

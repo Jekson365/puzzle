@@ -1,0 +1,164 @@
+@import './config.scss';
+
+$color-red-table: #FF0000;
+$color-red-stroke: #861212;
+$color-green-table: #75BB7C;
+$color-green-stroke: #307C38;
+
+
+.place-number-component {
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: $font-mtavruli;
+    background-color:$color-green-stroke;
+}
+.a-red {
+    background-color: $color-red-stroke !important;
+}
+.tables {
+    min-width: 1000px;
+    height: 500px;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: $main-primary;
+    .choosen {
+        box-shadow: 0 0 40px 1px rgb(255, 255, 255);
+    }
+    .table {
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .reds {
+        position: relative;
+
+        .number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-weight: bold;
+            font-family: sans-serif;
+            color: white;
+            background-color: white;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $main-primary;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .booked {
+        box-shadow: 0 0 40px 1px rgb(255, 68, 68) !important;
+    }
+
+    .circle-green {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        max-width: 500px;
+        .greens {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+
+            .number {
+                position: absolute;
+                font-weight: bold;
+                font-family: sans-serif;
+                color: white;
+                background-color: white;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $main-primary;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .greens {
+        .green {
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+
+            .number {
+                position: absolute;
+                font-weight: bold;
+                font-family: sans-serif;
+                color: white;
+                background-color: white;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $main-primary;
+                border-radius: 50%;
+            }
+        }
+    }
+    .cachier {
+        color: white;
+        font-family: cursive,sans-serif;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        &:before {
+            content: "";
+            display: flex;
+            width: 5px;
+            border-radius: 5px;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #75BB7C;
+        }
+        &:after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background:linear-gradient(90deg,#33b53157,#66666600);
+        }
+    }
+}
+
+.place-button {
+    border: 0 solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 0px;
+    text-shadow: none;
+    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+
+    &:hover {
+        border: 1px solid;
+        box-shadow: inset 0 0 20px rgb(255, 255, 255), 0 0 20px rgba(255, 255, 255, .2);
+        outline-color: rgba(255, 255, 255, 0);
+        outline-offset: 15px;
+        letter-spacing: 1px;
+        text-shadow: 1px 1px 2px #427388;
+    }
+}

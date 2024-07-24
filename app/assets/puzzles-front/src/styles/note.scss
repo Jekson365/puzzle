@@ -1,0 +1,51 @@
+@import './config.scss';
+
+.note-item {
+    padding: 10px 10px;
+    border-bottom: 0.2px solid rgba(0,0,0,0.2);
+    .note-date {
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    .note {
+        color: $main-primary;
+    }
+
+    .note-remove {
+        background-color: $main-green;
+        border-radius: 5px;
+        padding: 10px;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: 0.3s;
+
+        &:hover {
+            color: $main-green;
+        }
+    }
+
+    .note-check {
+        background-color: $main-red;
+        border-radius: 5px;
+        padding: 10px;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: 0.3s;
+
+        &:hover {
+            color: $main-red;
+        }
+    }
+}

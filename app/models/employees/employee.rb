@@ -1,6 +1,6 @@
-module Employee
+module Employees
   class Employee < ApplicationRecord
-    has_many :statuses
-    has_many :positions
+    belongs_to :status,class_name: 'Employees::Status'
+    belongs_to :position,class_name: 'Employees::Position'
   end
 end

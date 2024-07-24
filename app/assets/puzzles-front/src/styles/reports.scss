@@ -1,0 +1,69 @@
+@import 'config.scss';
+
+.report-container {
+    max-height: 450px;
+    overflow-x: scroll;
+
+    .row-item {
+        font-family: $font-mtavruli;
+        padding: 10px 5px;
+        font-size: 15px;
+        background-color: $main-white;
+    }
+}
+
+.clear-fields {
+    cursor: pointer;
+    font-size: 13px;
+    background-color: $main-primary;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: $font-mtavruli;
+}
+
+.report-title {
+    padding: 10px 0;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    font-weight: bold;
+    justify-content: center;
+    background-color: $main-white;
+
+    &:hover {
+        background-color: rgb(215, 215, 215);
+    }
+}
+
+.report-result-title {
+    background-color: $main-white;
+    color: $main-primary;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: $font-mtavruli;
+    box-shadow: 0 0 3px 0.5px rgba(0, 0, 0, 0.1);
+}
+
+.report-result {
+    background-color: $main-white;
+    color: $main-primary;
+    font-size: 20px;
+    font-family: sans-serif;
+    min-width: 150px;
+    font-weight: bold;
+    padding: 15px 10px;
+    box-shadow: 0 0 3px 0.5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.custom-input {
+    background-color: $main-white;
+    border: 0;
+    outline: 0;
+    padding: 10px 10px;
+    color: $main-primary;
+    font-size: 16px;
+    font-family: $font-mtavruli;
+}

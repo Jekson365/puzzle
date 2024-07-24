@@ -1,0 +1,65 @@
+@import '../config.scss';
+
+
+$dark-green: #1B9C85;
+
+.login-cover {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    top: 10%;
+    min-width: 350px;
+    padding:    20px 60px;
+
+    .inner-cover {
+        width: 100%;
+        .head {
+            color: $dark-green ;
+            font-size: 20px;
+        }
+
+        .input {
+            border: 0;
+            outline: 0;
+            border-radius: 5px;
+            font-size: 15px;
+            width: 100%;
+            color: $dark-green;
+            padding: 15px 15px;
+            background-color: #1b9c8429;
+            &::-webkit-input-placeholder {
+                color: #1b9c8489;
+            }
+        }   
+        .login {
+            background-color: $dark-green;
+            color: white;
+            letter-spacing: 1px;
+            width: 105%;
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 10px 15px;
+            border: 0;
+            outline: 0;
+            transition: 0.3s;
+            &:hover {
+                opacity: 0.8;
+                background-color: $dark-green;
+            }
+        }
+        .forgot {
+            padding-bottom: 50px;
+            color: $dark-green;
+            text-decoration: underline !important;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.3s;
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+}

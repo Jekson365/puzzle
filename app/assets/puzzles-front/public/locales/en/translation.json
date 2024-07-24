@@ -1,0 +1,65 @@
+{
+    "navigation": {
+        "products": "products",
+        "orders": "orders",
+        "new_order": "new order",
+        "report": "report",
+        "stock": "stock",
+        "note": "note",
+        "admin": {
+            "admin": "admin",
+            "create_product": "create product",
+            "add_stock": "add stock",
+            "statistic": "statistic",
+            "employees": "employees"
+        },
+        "logout": "logout"
+    },
+    "headers": {
+        "products": "Products",
+        "orders": "Orders",
+        "new_order": "New order",
+        "report": "Report",
+        "stock": "Stock",
+        "note": "Note",
+        "create_product": "create product",
+        "add_stock": "add stock",
+        "statistic": "statistic",
+        "employees": "employees"
+    },
+    "lang_button": {
+        "eng": "English",
+        "geo": "Georgian"
+    },
+    "placeholders": {
+        "full_name": "full name"
+    },
+    "orders": {
+        "ongoing": "ongoing",
+        "ready": "ready",
+        "sum": "sum"
+    },
+    "list": {
+        "order_id":"order number",
+        "product_id":"product ID",
+        "name": "name",
+        "surname": "surname",
+        "amount":"amount",
+        "title": "title",
+        "price": "price",
+        "category":"category",
+        "sell_type":"sell type",
+        "created_date": "created at",
+        "measure_unit": "measure unit",
+        "filters": {
+            "start_date": "Start date",
+            "end_date": "End date",
+            "title": "Title",
+            "filter":"Filter"
+        },
+        "panels": {
+            "sum": "sum",
+            "dg": "dmg"
+        }
+    }
+}

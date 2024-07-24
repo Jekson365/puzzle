@@ -1,0 +1,75 @@
+@import '../config.scss';
+@import '../index.scss';
+
+
+.report-header-title {
+    font-size: 15px !important;
+}
+
+.report-header {
+    height: 500px;
+    overflow-x: scroll;
+
+    .row {
+        border-bottom: 1px solid rgba(128, 128, 128, 0.183);
+        padding: 0 10px;
+        height: 40px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(128, 128, 128, 0.183);
+        }
+
+        .stock-title {
+            flex-wrap: nowrap;
+            padding: 10px 0;
+            font-size: 11px;
+            display: flex;
+            font-family: $font-mtavruli !important;
+            align-items: flex-start;
+        }
+    }
+}
+
+.history {
+    .row {
+        border-bottom: 1px solid white;
+        padding: 0 10px;
+        height: 40px;
+        background-color:$main-primary-dark;
+        cursor: pointer;
+
+
+        .stock-title {
+            color: white;
+            flex-wrap: nowrap;
+            padding: 10px 0;
+            font-size: 15px;
+            display: flex;
+            font-family: $font-mtavruli !important;
+            align-items: flex-start;
+        }
+    }
+}
+
+.report-panel-item {
+    padding: 10px;
+    max-width: 200px;
+    background-color: $light-green;
+    border-radius: 5px;
+
+    .sum-title {
+        color: white;
+    }
+
+    .sum {
+        color: white;
+        font-family: sans-serif !important;
+        font-size: 25px;
+
+        span {
+            font-size: 20px;
+            margin-left: 5px;
+        }
+    }
+}
