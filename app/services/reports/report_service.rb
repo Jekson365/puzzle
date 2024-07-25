@@ -11,6 +11,7 @@ module Reports
               ordered_products.id,
               products.name,
               ordered_products.amount,
+              products.id as product_id,
               TO_CHAR(ordered_products.created_at,\'yyyy-MM-dd HH:ss\') as created_at,
               (ordered_products.amount * products.price) as total_price,
               categories.name as category,
@@ -27,7 +28,8 @@ module Reports
                        ordered_products.amount,
                        products.price,
                        categories.name,
-                       sell_types.name
+                       sell_types.name,
+                        products.id
               ORDER BY orders.current_order_id
       "
       ActiveRecord::Base.connection.execute(query)
@@ -50,5 +52,17 @@ module Reports
       conditions.any? ? "WHERE #{conditions.join(' AND ')}" : ''
     end
 
+    def current_product
+      product_id = @params[:product_id]
+      query = "
+        SELECT products.name,products.id,stocks.name,ingredient_amounts.more,ingredient_amounts.less,
+          products.product_image,products.name as product_name FROM products
+          LEFT JOIN ingredient_amounts ON products.id = ingredient_amounts.product_id
+          LEFT JOIN stocks ON ingredient_amounts.stock_id = stocks.id
+          WHERE products.id = #{product_id}
+          GROUP BY products.id,stocks.name,ingredient_amounts.more,ingredient_amounts.less
+     "
+      ActiveRecord::Base.connection.execute(query)
+    end
   end
 end

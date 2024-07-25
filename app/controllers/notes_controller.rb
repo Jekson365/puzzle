@@ -26,6 +26,15 @@ class NotesController < ApplicationController
       render json: 'note destroyed'
     end
   end
+  def notify
+    notes = Note.all
+    notes.each do |e|
+      n = Date.now
+      if e.reminder_date.min == x.min
+        render json: e
+      end
+    end
+  end
   # employees
   private
 

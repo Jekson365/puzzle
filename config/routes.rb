@@ -24,9 +24,13 @@ Rails.application.routes.draw do
     resources :statuses
     resources :employees_history
   end
+  namespace :statistics do
+    post '/statistic',to: 'statistics#data'
+  end
 
   namespace :reports do
     post "/products", to: 'reports#report'
+    post '/product_details',to: 'reports#current_product_details'
   end
 
   post '/show_by_cat', to: 'products#show_by_category'

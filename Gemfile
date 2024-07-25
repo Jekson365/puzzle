@@ -52,3 +52,11 @@ gem "pry-rails", "~> 0.3.11"
 gem "jwt", "~> 2.8"
 
 gem "bcrypt", "~> 3.1"
+
+gem "sidekiq", "~> 7.3"
+
+gem "whenever", "~> 1.0"
+
+gem "sidekiq-scheduler", "~> 5.0"
+
+gem "noticed", "~> 2.4"

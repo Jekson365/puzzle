@@ -11,6 +11,10 @@ class Product < ApplicationRecord
 
   accepts_nested_attributes_for :product_calculations
 
+  def product_image_url
+    product_image.url
+  end
+
   private
 
   # def assign_product_id_to_ingredients

@@ -1,0 +1,8 @@
+:concurrency: 5
+:queues:
+  - default
+:scheduler:
+  :schedule:
+    notify_job:
+      cron: "* * * * * *" # every second
+      class: "NotifyJob"
