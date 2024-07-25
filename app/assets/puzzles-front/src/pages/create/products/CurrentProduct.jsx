@@ -150,13 +150,13 @@ function CurrentProduct() {
               <Typography key={s.id}>{s.name}</Typography>
               <Box className='amount-icon more'>
                 <div>
-                  {currentProduct.ingredient_amounts.find((item) => item.stock_id === s.id).more}
+                  {currentProduct.ingredient_amounts.find((item) => item.stock_id === s.id)?.more || '/'}
                 </div>
                 <div className="toast">მეტი</div>
               </Box>
               <Box className='amount-icon less'>
                 <div>
-                  {currentProduct.ingredient_amounts.find((item) => item.stock_id === s.id).less}
+                  {currentProduct.ingredient_amounts.find((item) => item.stock_id === s.id)?.less || '/'}
                 </div>
                 <div className="toast">ნაკლები</div>
               </Box>

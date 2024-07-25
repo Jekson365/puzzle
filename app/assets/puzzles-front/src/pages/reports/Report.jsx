@@ -9,11 +9,14 @@ import Loading from '../../partials/Loading'
 import ReportFilters from './ReportFilters'
 import ReportPanels from './ReportPanels'
 import { useTranslation } from 'react-i18next'
+import CurrentProductDetails from './partials/CurrentProductDetails'
 
 
 function Report() {
     const { fetchProductReport, productReport, loading } = useProductReport()
+    const [currentProductId, setCurrentProductId] = useState(null)
     const [totalPrice, setTotalPrice] = useState(0)
+    const [open, setOpen] = useState(false)
     const { t } = useTranslation()
     const [reportFilter, setReportFilter] = useState({
         start_date: '',
@@ -32,8 +35,20 @@ function Report() {
             setTotalPrice(total)
         }
     }, [productReport])
+
+    const handleCurrentProduct = (product) => {
+        setOpen(true)
+        console.log(product)
+        setCurrentProductId(product.product_id)
+    }
     return (
         <>
+            <CurrentProductDetails
+                open={open}
+                setOpen={setOpen}
+                product_id={currentProductId}
+            />
+
             <Title title={t('headers.report')} />
             <ReportFilters
                 fetchProductReport={fetchProductReport}
@@ -76,7 +91,7 @@ function Report() {
                     {productReport && productReport.map((e) => {
                         return (
                             <>
-                                <Grid container className='row'>
+                                <Grid key={e.id} container className='row' onClick={() => handleCurrentProduct(e)}>
                                     <Grid item xs>
                                         <Typography className='stock-title'>{e.current_order_id}</Typography>
                                     </Grid>
