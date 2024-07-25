@@ -105,7 +105,8 @@ function ProductCategories() {
                                         onClick={() => handleCatProductCall(e.id)}
                                         sx={{ background: colors[i] }}
                                     >
-                                        <Typography className='inner-text'>{e.name}</Typography>
+                                        <Typography className='inner-text'
+                                        >{e.name}</Typography>
                                     </Box>
                                 </Grid>
                             )

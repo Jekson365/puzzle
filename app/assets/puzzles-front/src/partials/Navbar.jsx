@@ -39,7 +39,12 @@ function Navbar() {
             visible: true,
             name: t('navigation.products'),
             path: '/products',
-            nest: []
+            nest: [
+                {
+                    name: t('navigation.admin.create_product'),
+                    path: "/create_product"
+                },
+            ]
         },
         {
             active: locatiom === 'orders',
@@ -68,7 +73,12 @@ function Navbar() {
             visible: user.admin ? true : false,
             name: t('navigation.stock'),
             path: '/stock',
-            nest: []
+            nest: [
+                {
+                    name: t('navigation.admin.add_stock'),
+                    path: "/create_stock"
+                },
+            ]
         },
         {
             active: locatiom === 'note',
@@ -83,14 +93,6 @@ function Navbar() {
             name: t('navigation.admin.admin'),
             path: '/create_product',
             nest: [
-                {
-                    name: t('navigation.admin.create_product'),
-                    path: "/create_product"
-                },
-                {
-                    name: t('navigation.admin.add_stock'),
-                    path: "/create_stock"
-                },
                 {
                     name: t('navigation.admin.statistic'),
                     path: '/stats'
@@ -150,7 +152,7 @@ function Navbar() {
                         {user.email}
                     </Typography>
                 </Box>
-                <LanguageSwitcher/>
+                <LanguageSwitcher />
                 <button className="main-button main-button-red" onClick={logOutUser}>{t('navigation.logout')}</button>
             </Stack>
             {/* <div className="cover">

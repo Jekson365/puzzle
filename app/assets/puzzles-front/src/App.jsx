@@ -17,6 +17,7 @@ import useLogOut from './hooks/users/useLogOut'
 import useCurrentUser from './hooks/users/useCurrentUser'
 import Employees from './pages/employees/Employees'
 import Report from './pages/reports/Report'
+import Stats from './pages/stats/Stats'
 
 export const CurrentUserContext = createContext({})
 
@@ -51,12 +52,12 @@ function App() {
               <Route path='/login' element={<Login />} />
               <Route path='/employees' element={<Employees />} />
               <Route path='/reports' element={<Report/>}/>
+              <Route path='/stats' element={<Stats/>}/>
               {/* <Route path='/orders' element={<Orders />} />
                 <Route path='/reports' element={<Report />} />
                 <Route path='/stock' element={<Stock />} />
                 <Route path='/import' element={<Import />} />
                 <Route path='/neworder' element={<NewOrder />} />
-                <Route path='/stats' element={<Stats/>}/>
               <Route path='/admin' element={<Admin/>}/> */}
             </Routes>
           </Grid>

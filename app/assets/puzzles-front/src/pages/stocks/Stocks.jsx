@@ -38,9 +38,10 @@ function Stocks() {
                     <Typography>საზომი ერთეული</Typography>
                 </Grid>
             </Grid>
-            <Grid className='header' container flexDirection={'row'} mt={3}>
+            <Grid className='header'
+            container flexDirection={'row'} mt={3}>
                 {loading ? (<>
-                    <Loading msg={'ჩეიტვირთება და მერე ქენი'} />
+                    <Loading msg={'იტვირთება'} />
                 </>) : (<>
                     {stock && stock.map((e) => {
                         return (

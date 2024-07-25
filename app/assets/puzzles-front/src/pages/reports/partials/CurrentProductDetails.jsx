@@ -26,8 +26,9 @@ function CurrentProductDetails({ open, setOpen, product_id }) {
                     </>) :
                         <>
                             <img
-                                width={'300px'}
+                                width={'350px'}
                                 src={baseUrl + `/uploads/product/product_image/${currentProduct[0]?.id}/` + currentProduct[0]?.product_image} />
+                            
                             <Typography mt={1}
                                 textAlign={'center'}
                                 fontSize={'20px'}
@@ -35,6 +36,22 @@ function CurrentProductDetails({ open, setOpen, product_id }) {
                             <Stack direction={'row'}
                                 mt={2}
                                 justifyContent={'space-between'} pl={3} pr={3} alignItems={'flex-start'}>
+                                <Stack
+                                    direction={'column'}
+                                    alignItems={'flex-start'}
+                                    gap={'10px'}
+                                >
+                                    <Typography>ინგრედიენტი</Typography>
+                                    {currentProduct && currentProduct.map((e)=> {
+                                        return (
+                                            <>
+                                              <Typography fontSize={'14px'}>
+                                                    {e.name}
+                                                </Typography>
+                                            </>
+                                        )
+                                    })}
+                                </Stack>
                                 <Stack
                                     direction={'column'}
                                     alignItems={'center'}
