@@ -1,7 +1,7 @@
 module Employees
   class EmployeeBlueprint < Blueprinter::Base
     view :employee do
-      fields :name,:surname,:id,:birth_date
+      fields :name,:surname,:id,:birth_date,:private_number,:phone_number,:salary
       field :age do |emp|
         if emp.birth_date
           ((DateTime.now - emp.birth_date.to_datetime) / 365).to_i

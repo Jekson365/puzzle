@@ -39,6 +39,9 @@
         "ready": "ready",
         "sum": "sum"
     },
+    "report": {
+        "filename":"file name"
+    },
     "list": {
         "order_id":"order number",
         "product_id":"product ID",

@@ -60,3 +60,9 @@ gem "whenever", "~> 1.0"
 gem "sidekiq-scheduler", "~> 5.0"
 
 gem "noticed", "~> 2.4"
+
+gem "caxlsx_rails", "~> 0.6.4"
+
+gem "axlsx", "~> 1.3"
+
+gem "roo", "~> 2.10"

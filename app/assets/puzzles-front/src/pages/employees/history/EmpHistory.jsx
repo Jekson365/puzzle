@@ -40,6 +40,15 @@ function EmpHistory() {
                     <Grid item xs>
                         <Typography className='report-header-title'>სტატუსი</Typography>
                     </Grid>
+                    <Grid item xs>
+                        <Typography className='report-header-title'>ხელფასი</Typography>
+                    </Grid>
+                    <Grid item xs>
+                        <Typography className='report-header-title'>პირადი ნომერი</Typography>
+                    </Grid>
+                    <Grid item xs>
+                        <Typography className='report-header-title'>ტელეფონის ნომერი</Typography>
+                    </Grid>
                 </Grid>
                 <Grid container className='history'>
                     {histories && histories.filter((item)=> item.name.includes(filterString) || item.surname.includes(filterString)).map((e) => {
@@ -60,6 +69,15 @@ function EmpHistory() {
                                     </Grid>
                                     <Grid item xs>
                                         <Typography className='stock-title'>{e.status}</Typography>
+                                    </Grid>
+                                    <Grid item xs>
+                                        <Typography className='stock-title'>{e.salary}</Typography>
+                                    </Grid>
+                                    <Grid item xs>
+                                        <Typography className='stock-title'>{e.private_number}</Typography>
+                                    </Grid>
+                                    <Grid item xs>
+                                        <Typography className='stock-title'>{e.phone_number}</Typography>
                                     </Grid>
                                 </Grid>
                             </>

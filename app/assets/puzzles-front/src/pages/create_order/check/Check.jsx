@@ -17,7 +17,6 @@ function Check() {
   const handleDeleteItem = (productId) => {
     const updatedItems = checkItems.ordered_products_attributes.filter(item => item.id !== productId)
     setCheckItems({ ...checkItems, ordered_products_attributes: updatedItems })
-    // Optionally update the total price if needed
     const newTotalPrice = updatedItems.reduce((acc, item) => acc + item.amount * item.price, 0)
     setTotalPrice(newTotalPrice)
   }

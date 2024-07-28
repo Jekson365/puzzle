@@ -27,6 +27,11 @@
     margin-top: 5px;
     background-color: white;
 }
+.custom-checkbox {
+    width: 30px;
+    cursor: pointer;
+    height:30px;
+}
 .cover-check {
     height: 850px;
     .check-inner-container {
@@ -77,6 +82,12 @@ select {
     &:hover {
         width: 130px;
     }
+}
+.main-button-gray {
+    border-radius: 2px;
+    border: 0.5px solid rgba(0,0,0,0.1);
+    background-color: rgba(255, 255, 255, 0.3);
+    color: gray;
 }
 .main-button-red {
     background-color: $main-green;
@@ -151,5 +162,23 @@ body {
     transition: 0.3s;
     &:hover {
         width: 130px;
+    }
+}
+
+.excel-icon {
+    border: 0.5px solid rgba(0,0,0,0.1);
+    color: green;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+        transform: scale(1.1);
+    }
+    img {
+        width: 30px;
     }
 }

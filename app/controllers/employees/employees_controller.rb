@@ -24,7 +24,10 @@ module Employees
             employee_id:emp.id,
             surname: emp.surname,
             status: emp.status.name,
-            position: emp.position.name
+            position: emp.position.name,
+            salary:emp.salary,
+            phone_number:emp.phone_number,
+            private_number:emp.private_number
           ).save
           render json: emp
         else
@@ -42,7 +45,8 @@ module Employees
     end
 
     def update_params
-      params.require(:employee).permit(:id,:name,:surname,:status_id,:position_id,:birth_date)
+      params.require(:employee).permit(:id,:name,:surname,:status_id,
+                                       :position_id,:birth_date,:private_number,:phone_number,:salary)
     end
   end
 end

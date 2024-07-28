@@ -1,6 +1,7 @@
 {
   "name": "puzzles-front",
   "private": true,
+  "homepage": "http://testpuzzle.ge",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

@@ -1,0 +1,15 @@
+@import '../config.scss';
+
+
+$background-color: #3e3d48;
+$stat-background:#1B1A55;
+
+.dark {
+    background-color: #2b2635 !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10000;
+}

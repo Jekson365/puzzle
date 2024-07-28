@@ -81,13 +81,13 @@ function OrderPage() {
                           <Typography color={'white'} mt={3}>
                             {e.product.name} - {e.amount}X
                           </Typography>
-                          {e.ordered_types_attributes && e.ordered_types_attributes.length > 0 && (
+                          {e.ordered_types && e.ordered_types.length > 0 && (
                             <Stack ml={2} direction={'column'} mt={1}>
-                              {e.ordered_types_attributes.map((type) => {
+                              {e.ordered_types.map((type) => {
                                 return (
                                   <Typography key={type.id} color={'white'}>
-                                    {type.more ? `+ ${type.name}` : null}
-                                    {!type.less ? `- ${type.name}` : null}
+                                    {type.more ? `+ ${type.stock.name}` : null}
+                                    {!type.less ? `- ${type.stock.name}` : null}
                                   </Typography>
                                 )
                               })}

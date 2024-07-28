@@ -40,7 +40,7 @@ function App() {
           </Grid>
           <Grid item xs={10} p={2} mt={1.5}>
             <Routes>
-              <Route path='/' element={<Navigate to={'/login'} />} />
+              <Route path='/' element={<Navigate to={'/login'}/>}/>
               <Route path='/products' element={<ProductsPage />} />
               <Route path='/create_product' element={<CreateProduct />} />
               <Route path='/stock' element={<Stocks />} />
@@ -55,7 +55,7 @@ function App() {
               <Route path='/stats' element={<Stats/>}/>
               {/* <Route path='/orders' element={<Orders />} />
                 <Route path='/reports' element={<Report />} />
-                <Route path='/stock' element={<Stock />} />
+                <Route path='/stock' element={<Stock />} /> 
                 <Route path='/import' element={<Import />} />
                 <Route path='/neworder' element={<NewOrder />} />
               <Route path='/admin' element={<Admin/>}/> */}

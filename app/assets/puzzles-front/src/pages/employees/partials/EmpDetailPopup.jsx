@@ -2,21 +2,17 @@ import React, { useEffect, useState } from 'react'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import Grid from '@mui/material/Grid'
 import Dialog from '@mui/material/Dialog'
 import { styled } from '@mui/material/styles';
-import useEditEmployee from '../../../hooks/employees/useEditEmployee'
-import useStatuses from '../../../hooks/employees/useStatuses'
-import usePositions from '../../../hooks/employees/usePositions'
+import Error from '../../../partials/Error'
 
 function EmpDetailPopup({ open, setOpen, currentEmployee }) {
+    const [msg, setMsg] = useState({ msg: "", variant: "" })
+    const [errorOpen, setErrorOpen] = useState(false)
+
     const handleClose = () => {
         setOpen(false)
     }
-
-    useEffect(() => {
-        console.log(currentEmployee)
-    }, [currentEmployee])
 
     return (
         <>
@@ -53,6 +49,18 @@ function EmpDetailPopup({ open, setOpen, currentEmployee }) {
                             <Stack direction={'row'} gap={'10px'} alignItems={'center'}>
                                 <Typography className='head'>პოზიცია:</Typography>
                                 <Typography className='meaning'>{currentEmployee.position?.name || 'არ არის მითითებული'}</Typography>
+                            </Stack>
+                            <Stack direction={'row'} gap={'10px'} alignItems={'center'}>
+                                <Typography className='head'>ხელფასი:</Typography>
+                                <Typography className='meaning'>{currentEmployee.salary || 'არ არის მითითებული'}</Typography>
+                            </Stack>
+                            <Stack direction={'row'} gap={'10px'} alignItems={'center'}>
+                                <Typography className='head'>პირადი ნომერი:</Typography>
+                                <Typography className='meaning'>{currentEmployee.private_number || 'არ არის მითითებული'}</Typography>
+                            </Stack>
+                            <Stack direction={'row'} gap={'10px'} alignItems={'center'}>
+                                <Typography className='head'>ტელეფონის ნომერი:</Typography>
+                                <Typography className='meaning'>{currentEmployee.phone_number || 'არ არის მითითებული'}</Typography>
                             </Stack>
                             <Stack direction={'row'} gap={'10px'} alignItems={'center'}>
                                 <Typography className='head'>სტატუსი:</Typography>

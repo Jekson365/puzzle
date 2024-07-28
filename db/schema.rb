@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_24_191920) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_26_111033) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,6 +28,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_24_191920) do
     t.integer "status_id", default: 1
     t.integer "position_id", default: 1
     t.date "birth_date"
+    t.bigint "phone_number"
+    t.decimal "salary"
+    t.bigint "private_number"
     t.index ["position_id"], name: "index_employees_on_position_id"
     t.index ["status_id"], name: "index_employees_on_status_id"
   end
@@ -40,6 +43,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_24_191920) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "employee_id"
+    t.bigint "phone_number"
+    t.decimal "salary"
+    t.bigint "private_number"
   end
 
   create_table "ingredient_amounts", force: :cascade do |t|
