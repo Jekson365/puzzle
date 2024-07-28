@@ -1,0 +1,67 @@
+{
+    "navigation": {
+        "products": "პროდუქტები",
+        "orders": "შეკვეთები",
+        "new_order": "ახალი შეკვეთა",
+        "report": "ანგარიში",
+        "stock": "საწყობი",
+        "note": "შენიშვნა",
+        "admin": {
+            "admin": "ადმინი",
+            "create_product": "პროდუქტის შექმნა",
+            "add_stock": "საწყობის დამატება",
+            "statistic": "სტატისტიკა",
+            "employees": "თანამშრომლები"
+        }
+    },
+    "headers": {
+        "products": "პროდუქტები",
+        "orders": "შეკვეთები",
+        "new_order": "ახალი შეკვეთა",
+        "report": "ანგარიში",
+        "stock": "საწყობი",
+        "note": "შენიშვნა",
+        "create_product": "პროდუქტის შექმნა",
+        "add_stock": "საწყობის დამატება",
+        "statistic": "სტატისტიკა",
+        "employees": "თანამშრომლები"
+    },
+    "lang_button": {
+        "eng": "ინგლისური",
+        "geo": "ქართული"
+    },
+    "placeholders": {
+        "full_name":"სრული სახელი"
+    },
+    "orders": {
+        "ongoing":"მიმდინარე",
+        "ready":"მზადაა",
+        "sum":"ჯამი"        
+    },
+    "report": {
+        "filename":"ფაილის სახელი"
+    },
+    "list": {
+        "order_id":"შეკვეთის ნომერი",
+        "product_id":"პროდუქციის ID",
+        "amount":"რაოდენობა",
+        "name":"სახელი",
+        "surname":"გვარი",
+        "title":"დასახელება",
+        "price":"ფასი",
+        "category":"კატეგორია",
+        "sell_type":"გაყიდვის ტიპი",
+        "created_date":"შექმნის თარიღი",
+        "measure_unit":"საზომი ერთეული",
+        "filters": {
+            "start_date":"საწყისი თარიღი",
+            "end_date":"საბოლოო თარიღი",
+            "title":"დასახელება",
+            "filter":"გაფილტვრა"
+        },
+        "panels": {
+            "sum":"ჯამი",
+            "dg":"დღგ"
+        }      
+    }
+}
