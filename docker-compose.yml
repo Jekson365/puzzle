@@ -2,7 +2,7 @@ version: '3'
 services:
   db:
     image: postgres:14.2-alpine
-    container_name: demo-postgres-14.2
+    container_name: test-container
     volumes:
       - postgres_data:/var/lib/postgresql/data
     command:

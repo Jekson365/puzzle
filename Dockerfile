@@ -13,6 +13,8 @@ ENV RAILS_ENV="production" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development"
 
+# Ensure Rails is in the PATH
+ENV PATH /rails/bin:$PATH
 
 # Throw-away build stage to reduce size of final image
 FROM base as build
@@ -33,7 +35,6 @@ COPY . .
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
-
 # Final stage for app image
 FROM base
 
@@ -46,10 +47,16 @@ RUN apt-get update -qq && \
 COPY --from=build /usr/local/bundle /usr/local/bundle
 COPY --from=build /rails /rails
 
+# Ensure Rails is in the PATH
+ENV PATH /rails/bin:$PATH
+
 # Run and own only the runtime files as a non-root user for security
 RUN useradd rails --create-home --shell /bin/bash && \
     chown -R rails:rails db log storage tmp
 USER rails:rails
+
+# Ensure entrypoint script is executable
+RUN chmod +x /rails/bin/docker-entrypoint
 
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]

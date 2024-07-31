@@ -5,5 +5,10 @@ if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
   ./bin/rails db:create
   ./bin/rails db:prepare
 fi
+#!/bin/sh
+set -e
+
+# Remove a potentially pre-existing server.pid for Rails.
+rm -f /rails/tmp/pids/server.pid
 
 exec "${@}"
