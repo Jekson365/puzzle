@@ -101,6 +101,10 @@ function Navbar() {
                     name: t('navigation.admin.employees'),
                     path: '/employees'
                 },
+                {
+                    name:t('navigation.admin_panel'),
+                    path:'/admin_panel'
+                }
             ]
         },
     ];

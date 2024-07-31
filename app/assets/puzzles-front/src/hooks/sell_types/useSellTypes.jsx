@@ -18,5 +18,4 @@ function useSellTypes() {
     }, [])
     return { sellTypes }
 }
-
 export default useSellTypes

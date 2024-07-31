@@ -5,7 +5,8 @@
 
 # Ignore bundler config.
 /.bundle
-
+/app/assets/puzzles-front
+/app/assets/puzzles-front.zip
 # Ignore all environment files (except templates).
 /.env*
 !/.env*.erb

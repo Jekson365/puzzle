@@ -18,6 +18,7 @@ import useCurrentUser from './hooks/users/useCurrentUser'
 import Employees from './pages/employees/Employees'
 import Report from './pages/reports/Report'
 import Stats from './pages/stats/Stats'
+import {AdminPanel} from "./pages/admin/AdminPanel.jsx";
 
 export const CurrentUserContext = createContext({})
 
@@ -53,6 +54,7 @@ function App() {
               <Route path='/employees' element={<Employees />} />
               <Route path='/reports' element={<Report/>}/>
               <Route path='/stats' element={<Stats/>}/>
+              <Route path={'admin_panel'} element={<AdminPanel/>}/>
               {/* <Route path='/orders' element={<Orders />} />
                 <Route path='/reports' element={<Report />} />
                 <Route path='/stock' element={<Stock />} /> 
