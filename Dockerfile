@@ -23,6 +23,10 @@ FROM base as build
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git libpq-dev libvips pkg-config
 
+# Install the correct version of Bundler
+ARG BUNDLER_VERSION='~> 2.5'
+RUN gem install bundler -v "$BUNDLER_VERSION"
+
 # Install application gems
 COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
