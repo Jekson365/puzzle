@@ -53,13 +53,13 @@ COPY --from=build /rails /rails
 # Ensure Rails is in the PATH
 ENV PATH /rails/bin:$PATH
 
+# Ensure entrypoint script is executable
+RUN chmod +x /rails/bin/docker-entrypoint
+
 # Run and own only the runtime files as a non-root user for security
 RUN useradd rails --create-home --shell /bin/bash && \
     chown -R rails:rails db log storage tmp
 USER rails:rails
-
-# Ensure entrypoint script is executable
-RUN chmod +x /rails/bin/docker-entrypoint
 
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
