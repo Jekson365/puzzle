@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   db:
     image: postgres:14.2-alpine
@@ -14,17 +14,19 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     ports:
       - "5434:5432"
+
   demo-web:
     build: .
-    command: "./bin/rails server"
+    command: "./bin/rails server -b 0.0.0.0"
     environment:
-      - POSTGRES_HOST=${POSTGRES_HOST}
+      - POSTGRES_HOST=db
       - POSTGRES_DB=${POSTGRES_DB}
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - RAILS_MASTER_KEY=75e234fa657f614db1c84e561ac87836
     volumes:
       - app-storage:/rails/storage
+      - .:/rails
     depends_on:
       - db
     ports:

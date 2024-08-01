@@ -115,7 +115,8 @@ function CreateProduct() {
                                 onChange={(e) => setProductParams({ ...productParams, product_image: e.target.files[0] })}
                                 type="file" name='product_image' />
                         </Button>
-                        <Button onClick={handleCreate}
+                        <Button
+                            onClick={handleCreate}
                             color='success'
                             variant='contained'
                         >ატვირთვა</Button>

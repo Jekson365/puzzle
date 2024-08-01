@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography'
 import Logo from '../../assets/logo/puzzles.png'
 import AOS from 'aos'
 import useUserLogin from '../../hooks/auth/useUserLogin'
+import instance from "../../AxiosInstance.jsx";
 
 export default function Login() {
     const { loginUser } = useUserLogin()
@@ -19,9 +20,6 @@ export default function Login() {
     const sendData = () => {
         loginUser(userPayload)
     }
-    useEffect(() => {
-        AOS.init({ duration: 1000 });
-    }, [])
     return (
         <div
             data-aos="fade-up"

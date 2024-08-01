@@ -4,7 +4,12 @@ import instance from '../../AxiosInstance'
 function useUserLogin() {
     const [user,setUser] = useState()
     const loginUser = async (payload) => {
-        await instance.post("/login", payload)
+
+        await instance.post("/login",payload, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
             .then((res) => {
                 if (res.data.token) {
                     localStorage.setItem("token",JSON.stringify(res.data.token))
