@@ -2,22 +2,24 @@
 @import url("//cdn.web-fonts.ge/fonts/bpg-nino-mtavruli-bold/css/bpg-nino-mtavruli-bold.min.css");
 
 
+$main-primary-light: rgba(20, 56, 156, 0.3);
+$main-primary-dark: rgba(20, 56, 156, 0.5);
 
 $main-primary: #1D3354;
-$main-primary-light:rgba(20,56,156,0.3);
-$main-primary-dark:rgba(20,56,156,0.5);
 $main-white: #EBF4F6;
 $main-green: #D64045;
 $main-red: #43bf81;
 
-
 $light-green: #37B7C3;
-$light-green-transparent: rgba(67, 191, 129,0.1);
+$light-green-transparent: rgba(67, 191, 129, 0.1);
 
 
 $font-title: "BPG Boxo", sans-serif;
 $font-mtavruli: "BPG Nino Mtavruli Bold";
 
+$nav-gradient: linear-gradient(180deg, rgba(29, 51, 84, 1) 0%, rgba(77, 97, 126, 1) 100%);
 
-
-$nav-gradient: linear-gradient(180deg, rgba(29,51,84,1) 0%, rgba(77,97,126,1) 100%);
+//$theme-color-primary: #1D3354;
+//$theme-color-secondary:#D64045;
+//$theme-color-sec-light:#43bf81;
+//$theme-color-light: #EBF4F6;

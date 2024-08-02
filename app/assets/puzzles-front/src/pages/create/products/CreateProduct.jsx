@@ -10,6 +10,7 @@ import Error from '../../../partials/Error'
 import UseCategory from '../../../hooks/categories/UseCategory'
 import useSellTypes from '../../../hooks/sell_types/useSellTypes'
 import { useTranslation } from 'react-i18next'
+import {CreateCategory} from "./CreateCategory.jsx";
 
 
 function CreateProduct() {
@@ -117,12 +118,13 @@ function CreateProduct() {
                         </Button>
                         <Button
                             onClick={handleCreate}
-                            color='success'
+                            className={'main-button main-button-green'}
                             variant='contained'
                         >ატვირთვა</Button>
                     </Stack>
                 </form>
             </Grid>
+            <CreateCategory/>
             <Error msg={errorType.msg} variant={errorType.variant} open={open} setOpen={setOpen} />
         </>
     )

@@ -11,6 +11,38 @@
     margin: 0;
     padding: 0;
 }
+.remove-icon {
+    background-color: white;
+    color: red;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 50%;
+    &:hover {
+        background-color: red;
+        color: white;
+    }
+}
+.add-icon {
+    background-color: white;
+    color: green;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 50%;
+    &:hover {
+        background-color: green;
+        color: white;
+    }
+}
 .custom-input-field {
     border-radius: 5px;
     border: 0;
@@ -90,11 +122,11 @@ select {
     color: gray;
 }
 .main-button-red {
-    background-color: $main-green;
+    background-color: $main-green !important;
 }
 .main-button-green {
     color: $main-white;
-    background-color: $main-red;
+    background-color: $main-red !important;
 }
 
 body {

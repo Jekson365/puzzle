@@ -10,6 +10,7 @@ function Error({ msg, variant, open, setOpen }) {
         }
 
         setOpen(false);
+
     };
     return (
         <>

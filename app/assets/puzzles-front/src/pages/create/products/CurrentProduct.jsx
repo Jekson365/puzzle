@@ -52,12 +52,12 @@ function CurrentProduct() {
     let isValid = true
     inputs.forEach((e) => {
       const { stock_id, product_id, more, less } = e
-      if (stock_id == '') {
+      if (stock_id === '') {
         setOpen(true)
         setErrorType({ msg: "მარაგის Id ცარიელია", variant: "error" })
         isValid = false
       }
-      else if (product_id == '') {
+      else if (product_id === '') {
         setOpen(true)
         setErrorType({ msg: "პროდუქციის ველი ცარიელია", variant: "error" })
         isValid = false
