@@ -1,10 +1,10 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Dialog from "@mui/material/Dialog";
 import '../../styles/themes/theme.scss'
 import Stack from "@mui/material/Stack";
 import Box from '@mui/material/Box'
 
-export const Theme = ({open, setOpen}) => {
+export const Theme = ({ open, setOpen }) => {
     const [pallate, setPallate] = useState(0)
     const colors = [
         {
@@ -23,7 +23,7 @@ export const Theme = ({open, setOpen}) => {
         },
     ]
     const save = () => {
-        let current = colors.find((e)=> e.id === pallate)
+        let current = colors.find((e) => e.id === pallate)
     }
     const handleClose = () => {
         setOpen(false)
@@ -41,7 +41,7 @@ export const Theme = ({open, setOpen}) => {
                             return (
                                 <>
                                     <Box className={`cover ${e.id === pallate ? 'selected' : ""} `}
-                                         onClick={() => setPallate(e.id)}
+                                        onClick={() => setPallate(e.id)}
                                     >
                                         <Stack
                                             alignItems={'center'}
@@ -51,23 +51,26 @@ export const Theme = ({open, setOpen}) => {
                                                 backgroundColor={e.colorOne}
                                             ></Box>
                                             <Box className={'color-box'}
-                                                 backgroundColor={e.colorTwo}
+                                                backgroundColor={e.colorTwo}
                                             ></Box>
                                             <Box className={'color-box'}
-                                                 backgroundColor={e.colorThree}
+                                                backgroundColor={e.colorThree}
                                             ></Box>
                                             <Box className={'color-box'}
-                                                 backgroundColor={e.colorFour}
+                                                backgroundColor={e.colorFour}
                                             ></Box>
                                         </Stack>
                                     </Box>
-                                    <button
-                                    onClick={save}
-                                    >შეცვალ</button>
                                 </>
                             )
                         })}
                     </Stack>
+                    <Box mt={3}>
+                        <button
+                            className='main-button main-button-green'
+                            onClick={save}
+                        >შეცვალა</button>
+                    </Box>
                 </Box>
             </Dialog>
         </>

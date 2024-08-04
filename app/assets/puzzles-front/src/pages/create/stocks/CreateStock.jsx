@@ -82,6 +82,7 @@ function CreateStock() {
                         </select>
                         <Button onClick={handleCreate}
                             color='success'
+                            className='main-button main-button-green'
                             variant='contained'
                         >ატვირთვა</Button>
                     </Stack>

@@ -101,7 +101,7 @@ function CurrentProduct() {
   return (
     <>
       <h1>{currentProduct.name}</h1>
-      <Stack direction={'column'} alignItems={'flex-start'} gap={'20px'}>
+      <Stack direction={'column'} alignItems={'flex-start'} gap={'20px'} mt={2}>
         {inputs.map((input, index) => (
           <Stack direction={'row'} gap={'10px'}
             alignItems={'center'} key={index}>
@@ -139,8 +139,12 @@ function CurrentProduct() {
         ))}
       </Stack>
       <Stack direction={'row'} gap={'20px'} mt={3}>
-        <Button onClick={handleInputAdd} color='success' variant='contained'>დამატება</Button>
-        <Button onClick={handleSend} variant='contained'>შენახვა</Button>
+        <Button onClick={handleInputAdd} 
+        className='main-button main-button-red'
+        color='success' variant='contained'>დამატება</Button>
+        <Button onClick={handleSend} 
+        className='main-button main-button-green'
+        variant='contained'>შენახვა</Button>
       </Stack>
       <MinTitle title={'ინგრედიენტი'} />
       <Stack direction={'column'} alignItems={'flex-start'} gap={'15px'} mt={3}>

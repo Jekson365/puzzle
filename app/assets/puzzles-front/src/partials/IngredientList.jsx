@@ -9,13 +9,17 @@ import { baseUrl } from '../AxiosInstance'
 import Box from '@mui/material/Box'
 import AddIcon from '@mui/icons-material/Add';
 import CheckIcon from '@mui/icons-material/Check';
+import { CheckContext } from '../pages/create_order/CreateOrderPage'
 
-function IngredientList({ open, setOpen }) {
+function IngredientList({ open, setOpen, }) {
     const { currentIngredients, setCurrentIngredients, productList, setProductList } = useContext(IngredientContext)
-
+    const { totalPrice, setTotalPrice } = useContext(CheckContext)
     const handleClose = () => {
         setOpen(false)
     }
+    useEffect(()=> {
+        console.log(currentIngredients)
+    },[currentIngredients])
     const handleIngredientData = (item, action) => {
         let alteredArray = currentIngredients.ordered_types_attributes.map((each) => {
             if (each && item.name === each.name) {
@@ -29,9 +33,15 @@ function IngredientList({ open, setOpen }) {
         });
         setCurrentIngredients({ ...currentIngredients, ordered_types_attributes: alteredArray })
     }
-    const handleSubmit = () => {
-        setOpen(false)
-        setProductList([...productList, currentIngredients])
+    const handleSubmit = (t) => {
+        if (t == 'close') {
+            setOpen(false)
+        }
+        else {
+            setTotalPrice(totalPrice + Number(currentIngredients.price))
+            setOpen(false)
+            setProductList([...productList, currentIngredients])
+        }
     }
     return (
         <>
@@ -74,8 +84,8 @@ function IngredientList({ open, setOpen }) {
                 <Stack direction={'row'}
                     p={3}
                     justifyContent={'center'} alignItems={'center'} gap={'20px'}>
-                    <button className="main-button main-button-red">გაუქმება</button>
-                    <button className="main-button main-button-green" onClick={handleSubmit}>დადასტურება</button>
+                    <button className="main-button main-button-red" onClick={() => handleClose("close")}>გაუქმება</button>
+                    <button className="main-button main-button-green" onClick={() => handleSubmit('check')}>დადასტურება</button>
                 </Stack>
             </Dialog>
         </>

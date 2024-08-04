@@ -48,7 +48,7 @@
     .title-section {
         border-radius: 5px;
         width: 100%;
-        height: 107px;
+        height: 70px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -73,7 +73,7 @@
             width: 100%;
             text-decoration: none;
             color: white !important;
-            font-size: 25px;
+            font-size: 16px !important;
             font-family: $font-mtavruli;
             transition: 0.3s;
             .nav-item-text-inner {

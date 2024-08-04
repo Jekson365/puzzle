@@ -10,11 +10,13 @@ import Error from '../../../partials/Error'
 import UseCategory from '../../../hooks/categories/UseCategory'
 import useSellTypes from '../../../hooks/sell_types/useSellTypes'
 import { useTranslation } from 'react-i18next'
-import {CreateCategory} from "./CreateCategory.jsx";
+import { CreateCategory } from "./CreateCategory.jsx";
+import AddTaskIcon from '@mui/icons-material/AddTask';
+import Box from '@mui/material/Box'
 
 
 function CreateProduct() {
-    const {t} = useTranslation()
+    const { t } = useTranslation()
     const { createProduct, loading } = useCreateProduct()
 
     const [open, setOpen] = useState(false)
@@ -74,14 +76,14 @@ function CreateProduct() {
         if (sellTypes && sellTypes.length > 0) {
             setProductParams(prevState => ({ ...prevState, sell_type_id: sellTypes[0].id }))
         }
-    }, [categories,sellTypes])
+    }, [categories, sellTypes])
 
     return (
         <>
             <Title title={t('headers.create_product')} />
             <Grid container mt={8}>
                 <form type='multipart/form-data'>
-                    <Stack direction={'row'} gap={'20px'}>
+                    <Stack direction={'row'} gap={'20px'} flexWrap={'wrap'}>
                         <input placeholder='დასახელება' className='custom-input-field' name='name' onChange={(e) => setProductParams({ ...productParams, name: e.target.value })} />
                         <input placeholder='ფასი' className='custom-input-field' name='price' onChange={(e) => setProductParams({ ...productParams, price: e.target.value })} />
                         <select onChange={(e) => setProductParams({ ...productParams, category_id: e.target.value })}
@@ -104,18 +106,24 @@ function CreateProduct() {
                                 )
                             })}
                         </select>
-                        <Button
-                            component="label"
-                            role={undefined}
-                            style={{ background: "#D64045" }}
-                            variant="contained"
-                            tabIndex={-1}
-                        >
-                            ატვირთე ფოტო
-                            <VisuallyHiddenInput
-                                onChange={(e) => setProductParams({ ...productParams, product_image: e.target.files[0] })}
-                                type="file" name='product_image' />
-                        </Button>
+                        <Stack direction={'row'} alignItems={'center'} gap={'10px'}>
+
+                            <Box className='check-icon'>
+                                {productParams && productParams.product_image != null ? <AddTaskIcon /> : null}
+                            </Box>
+                            <Button
+                                component="label"
+                                role={undefined}
+                                style={{ background: "#D64045" }}
+                                variant="contained"
+                                tabIndex={-1}
+                            >
+                                ატვირთე ფოტო
+                                <VisuallyHiddenInput
+                                    onChange={(e) => setProductParams({ ...productParams, product_image: e.target.files[0] })}
+                                    type="file" name='product_image' />
+                            </Button>
+                        </Stack>
                         <Button
                             onClick={handleCreate}
                             className={'main-button main-button-green'}
@@ -124,7 +132,7 @@ function CreateProduct() {
                     </Stack>
                 </form>
             </Grid>
-            <CreateCategory/>
+            <CreateCategory />
             <Error msg={errorType.msg} variant={errorType.variant} open={open} setOpen={setOpen} />
         </>
     )

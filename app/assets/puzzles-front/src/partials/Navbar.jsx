@@ -1,27 +1,27 @@
-import React, {createContext, useContext, useEffect, useState} from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import '../styles/partials.scss';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import {useLocation, Link} from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import List from '@mui/material/List';
 import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
 import useLogOut from '../hooks/users/useLogOut';
 import useCurrentUser from '../hooks/users/useCurrentUser';
-import {CurrentUserContext} from '../App';
+import { CurrentUserContext } from '../App';
 import Stack from '@mui/material/Stack'
-import {useTranslation} from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../LanguageSwitcher';
-import {Theme} from "./themes/Theme.jsx";
+import { Theme } from "./themes/Theme.jsx";
 
 
 function Navbar() {
-    const {user} = useContext(CurrentUserContext)
-    const {t} = useTranslation()
-    const {logOutUser} = useLogOut()
+    const { user } = useContext(CurrentUserContext)
+    const { t } = useTranslation()
+    const { logOutUser } = useLogOut()
     const location = useLocation();
     const [open, setOpen] = useState({});
-    const [pallateOpen,setPallateOpen] = useState(false)
+    const [pallateOpen, setPallateOpen] = useState(false)
     const handleClick = (index) => {
         setOpen((prevOpen) => ({
             ...prevOpen,
@@ -113,10 +113,10 @@ function Navbar() {
     return (
         <>
             <div className="nav-bar-container"
-                 style={locatiom === 'stats' ? {
-                     background: ' linear-gradient(180deg, rgba(43, 38, 53,1) 0%, rgba(77,97,126,1) 100%)',
-                     transition: "0.3s"
-                 } : null}
+                style={locatiom === 'stats' ? {
+                    background: ' linear-gradient(180deg, rgba(43, 38, 53,1) 0%, rgba(77,97,126,1) 100%)',
+                    transition: "0.3s"
+                } : null}
             >
                 <div className="title-section">
                     <p className="title">
@@ -125,26 +125,29 @@ function Navbar() {
                 </div>
                 <div className="nav-components">
                     <List
-                        sx={{width: '100%', maxWidth: 360}}
+                        sx={{ width: '100%', maxWidth: 360 }}
                         component="nav"
                         aria-labelledby="nested-list-subheader"
                     >
                         {arr.filter((e) => e.visible).map((e, index) => (
                             <React.Fragment key={index}>
                                 <Link to={e.path}
-                                      style={{textDecoration: "none", width: "100%"}}
+                                    style={{ textDecoration: "none", width: "100%" }}
                                 >
-                                    <ListItemText primary={e.name} onClick={() => handleClick(index)}
-                                                  className={`nav-item-text`}/>
+                                    <Typography
+                                        onClick={() => handleClick(index)}
+                                        className={`nav-item-text`}>
+                                        {e.name}
+                                    </Typography>
                                 </Link>
                                 {e.nest.length > 0 && e.nest.map((j, nestIndex) => (
                                     <Collapse key={nestIndex} in={open[index]} timeout="auto" unmountOnExit>
                                         <List component="div" disablePadding>
-                                            <Box sx={{pl: 2}}>
-                                                <Link to={j.path} style={{textDecoration: "none"}}>
+                                            <Box sx={{ pl: 2 }}>
+                                                <Link to={j.path} style={{ textDecoration: "none" }}>
                                                     <Typography color={'white'}
-                                                                className='nav-item-text-inner'>
-                                                        <ListItemText primary={j.name}/>
+                                                        className='nav-item-text-inner'>
+                                                        <ListItemText primary={j.name} />
                                                     </Typography>
                                                 </Link>
                                             </Box>
@@ -157,23 +160,23 @@ function Navbar() {
                 </div>
                 <Stack className="extra" gap={'10px'}>
                     <Typography
-                            onClick={()=>setPallateOpen(true)}
-                    color={'white'}
+                        onClick={() => setPallateOpen(true)}
+                        color={'white'}
                     >თემა</Typography>
                     <Box className='extra-email'>
                         <Typography color={'white'}>
                             {user.email}
                         </Typography>
                     </Box>
-                    <LanguageSwitcher/>
+                    <LanguageSwitcher />
                     <button className="main-button main-button-red"
-                            onClick={logOutUser}>{t('navigation.logout')}</button>
+                        onClick={logOutUser}>{t('navigation.logout')}</button>
                 </Stack>
                 {/* <div className="cover">
                 <img src={Logo} className='logo' alt="Logo" />
             </div> */}
             </div>
-            <Theme open={pallateOpen} setOpen={setPallateOpen}/>
+            <Theme open={pallateOpen} setOpen={setPallateOpen} />
         </>
     );
 
