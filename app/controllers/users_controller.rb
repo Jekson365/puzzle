@@ -8,6 +8,11 @@ class UsersController < ApplicationController
       render json: { msg: "something went wrong!" }
     end
   end
+  def make_admin
+    user = User.find(params[:id])
+    user.admin = true
+    render json: user
+  end
   def get_current_user
     user = User.find(JWT.decode(current_user_params[:token],"helloworld")[0]['user_id'])
     render json: user

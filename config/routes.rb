@@ -46,5 +46,6 @@ Rails.application.routes.draw do
   post '/login', to: "auth#login"
   post '/register', to: 'users#register'
   post '/user', to: 'users#get_current_user'
+  post '/make_admin',to: 'users#make_admin'
 
 end

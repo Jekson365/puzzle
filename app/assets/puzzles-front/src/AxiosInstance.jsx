@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const instance = axios.create({
-    baseURL:'http://localhost:3000'
+    baseURL:'https://puzzletest.onrender.com'
 })
 
-export const baseUrl = 'http://localhost:3000'
+export const baseUrl = 'https://puzzletest.onrender.com'
 export default instance
