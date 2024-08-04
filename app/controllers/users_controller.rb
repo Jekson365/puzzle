@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def make_admin
     user = User.find(params[:id])
     user.admin = true
+    user.save
     render json: user
   end
   def get_current_user
