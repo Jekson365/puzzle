@@ -9,13 +9,22 @@ class ProductsController < ApplicationController
       render json: product.errors.full_messages
     end
   end
+  def destroy
+    product = Product.find(params[:id])
+    if product
+      product.deleted = true
+      product.save
+    end
+  end
   def index
-    products = Product.all
+    products = Product.where(deleted: false)
     render json: products
   end
   def show
     product = Product.find(params[:id])
-    render json: ProductBlueprint.render(product)
+    unless product.deleted
+      render json: ProductBlueprint.render(product)
+    end
   end
   def show_by_category
     products = Product.where(category_id: params[:cat_id])

@@ -17,8 +17,16 @@ class OrdersController < ApplicationController
     render json: order
   end
 
+  def destroy
+    order = Order.find(params[:id])
+    if order
+      order.deleted = true
+      order.save
+    end
+  end
+
   def index
-    orders = Order.all
+    orders = Order.where(dele ted: false)
     render json: orders
   end
 
