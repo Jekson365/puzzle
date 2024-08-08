@@ -11,6 +11,7 @@ import MinTitle from '../../../partials/MinTitle';
 import '../../../styles/currentproduct.scss'
 import Typography from '@mui/material/Typography'
 import Error from '../../../partials/Error';
+import useProductRemove from '../../../hooks/products/useProductRemove';
 
 function CurrentProduct() {
   const [id, setId] = useState(window.location.href.split('/')[4]);
@@ -20,6 +21,7 @@ function CurrentProduct() {
 
   const { fetchCurrentProduct, currentProduct } = useCurrentProduct();
   const { handleRemove } = useProdCalculationRemove()
+  const {handleProductRemove} = useProductRemove()
   const [prodCalculation, setProdCalculation] = useState([]);
 
   const { stock, loading, fetchStock } = useStock();
@@ -170,6 +172,15 @@ function CurrentProduct() {
             </Stack>
           </Box>
         ))}
+      </Stack>
+      <Stack
+        direction={'column'}
+        alignItems={'flex-start'}
+        mt={8}
+      >
+        <button 
+        onClick={()=>handleProductRemove(currentProduct.id)}
+        className="main-button main-button-red outline">წაშლა</button>
       </Stack>
       <Error msg={errorType.msg} open={open} variant={errorType.variant} setOpen={setOpen} />
     </>

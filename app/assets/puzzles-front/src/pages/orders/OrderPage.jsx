@@ -12,11 +12,13 @@ import useIndexOrder from '../../hooks/orders/useIndexOrder'
 import useMakeReady from '../../hooks/orders/useMakeReady'
 import MinTitle from '../../partials/MinTitle'
 import { useTranslation } from 'react-i18next'
+import useOrderRemove from '../../hooks/orders/useRemoveOrder'
 
 
 function OrderPage() {
   const { orders, fetchIndexOrders } = useIndexOrder()
   const { currentOrder, fetchOrder } = useShowOrder()
+  const { handleOrderRemove } = useOrderRemove()
   const { t } = useTranslation()
   const { makeReady } = useMakeReady()
   const handleOrderShow = (id) => {
@@ -99,11 +101,17 @@ function OrderPage() {
                   ) : null}
                 </Box>
                 <Box>
-                  <Stack direction={'row'} justifyContent={'space-between'} width={'100%'} alignItems={'center'}>
+                  <Stack direction={'row'}
+                    justifyContent={'space-between'} width={'100%'} alignItems={'center'}>
                     <Typography color={'white'} fontSize={'30px'}>{t('orders.sum')}: {currentOrder.total_price}$</Typography>
-                    <button className='check-button check-button-green'
-                      onClick={() => makeReady(currentOrder.id)}
-                    >{t('orders.ready')}</button>
+                    <Stack direction={'row'} gap={'10px'}>
+                      <button className='main-button main-button-red outline'
+                        onClick={()=>handleOrderRemove(currentOrder.id)}
+                      >წაშლა</button>
+                      <button className='check-button check-button-green'
+                        onClick={() => makeReady(currentOrder.id)}
+                      >{t('orders.ready')}</button>
+                    </Stack>
                   </Stack>
                 </Box>
               </Stack>

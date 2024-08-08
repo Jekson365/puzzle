@@ -6,6 +6,7 @@
         "report": "report",
         "stock": "stock",
         "note": "note",
+        "admin_panel":"Admin Panel",
         "admin": {
             "admin": "admin",
             "create_product": "create product",

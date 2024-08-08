@@ -23,7 +23,7 @@ function IngredientList({ open, setOpen, }) {
     const handleIngredientData = (item, action) => {
         let alteredArray = currentIngredients.ordered_types_attributes.map((each) => {
             if (each && item.name === each.name) {
-                if (action === 'more') {
+            if (action === 'more') {
                     return { ...each, more: !each.more }
                 } else if (action === 'less') {
                     return { ...each, less: !each.less }

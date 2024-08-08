@@ -56,7 +56,9 @@ function Check() {
           <Box>
             <Stack direction={'row'} justifyContent={'space-between'} width={'100%'} alignItems={'center'}>
               <Typography color={'white'} fontSize={'30px'}>ჯამი: {totalPrice}$</Typography>
-              <button className='main-button main-button-green' onClick={handleSend}>დადასტურება</button>
+              <Stack>
+                <button className='main-button main-button-green' onClick={handleSend}>დადასტურება</button>
+              </Stack>
             </Stack>
           </Box>
         </Stack>
